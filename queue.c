@@ -80,7 +80,6 @@ element_t *q_remove_head(struct list_head *head, char *sp, size_t bufsize)
     struct list_head *node = head->next;
     element_t *e = container_of(node, element_t, list);
     size_t len = strlen(e->value);
-    len = bufsize > len ? len : bufsize;
     memset(sp, 0, bufsize);
     if (len > bufsize) {
         strncpy(sp, e->value, bufsize);
