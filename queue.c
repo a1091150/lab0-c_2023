@@ -45,11 +45,10 @@ bool q_insert_head(struct list_head *head, char *s)
 
     element_t *e = malloc(sizeof(element_t));
     char *dup = strdup(s);
-    if (!e) {
-        return false;
-    }
-    if (!dup) {
+
+    if (!e || !dup) {
         free(e);
+        free(dup);
         return false;
     }
     e->value = dup;
@@ -66,11 +65,10 @@ bool q_insert_tail(struct list_head *head, char *s)
 
     element_t *e = malloc(sizeof(element_t));
     char *dup = strdup(s);
-    if (!e) {
-        return false;
-    }
-    if (!dup) {
+
+    if (!e || !dup) {
         free(e);
+        free(dup);
         return false;
     }
     e->value = dup;
