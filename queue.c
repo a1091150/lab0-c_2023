@@ -272,9 +272,9 @@ void q_reverseK(struct list_head *head, int k)
 }
 
 
-void merge_two_lists(struct list_head *left_head,
-                     struct list_head *right_head,
-                     struct list_head *head)
+static void merge_two_lists(struct list_head *left_head,
+                            struct list_head *right_head,
+                            struct list_head *head)
 {
     while (!list_empty(left_head) && !list_empty(right_head)) {
         element_t *e1 = list_entry(left_head->next, element_t, list);
